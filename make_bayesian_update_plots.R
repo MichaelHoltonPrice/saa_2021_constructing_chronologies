@@ -1,4 +1,4 @@
-# Create plots Bayesian update illustration plots for Michael Holton Price's 
+# Create Bayesian update illustration plots for Michael Holton Price's
 # following 2021 Society for American Archaeology (SAA) presentation:
 #
 # Title:
