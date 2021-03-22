@@ -251,11 +251,10 @@ pdf('sim_spd_10000.pdf',width=8,height=6)
   plot(tau,fspd10000,
        xlab='Calendar Year [AD]',ylab='Density',
        ylim=c(0,fmax),type="l",lwd=3,col="black")
-  lines(tau,fsim,,lwd=3,col="blue")
   legend("topright",
-       legend=c("Target","SPD"),
-       col=c("blue","black"),
-       lty=c(1,1))
+       legend="SPD",
+       col="black",
+       lty=1)
 dev.off()
 
 # Show the target curve and the SPD for N=10000
