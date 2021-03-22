@@ -41,7 +41,7 @@
 
 %----------- slide --------------------------------------------------%
 \begin{frame}
-  \frametitle{Accessing the presentation}
+  \frametitle{Because we've gone digital, I've made the presentation easily accessible}
   \centering
   \href{https://www.overleaf.com/read/cwhmdrdfxncm}{https://www.overleaf.com/read/cwhmdrdfxncm}
   \includegraphics[height=.85\textheight]{QR_Code_1616345765.png}
@@ -50,35 +50,50 @@
 %----------- slide --------------------------------------------------%
 \begin{frame}[c]
     \frametitle{Accessing the code}
-      \href{https://github.com/eehh-stanford/baydem}{github.com/eehh-stanford/baydem}
-      \href{https://github.com/MichaelHoltonPrice/price_et_al_tikal_rc}{github.com/MichaelHoltonPrice/price\_et\_al\_tikal\_rc}
-      \href{https://github.com/MichaelHoltonPrice/saa_2021_constructing_chronologies}{github.com/MichaelHoltonPrice/saa\_2021\_constructing\_chronologies}
+      R package that implements the end-to-end approach I describe today:\\
+      \href{https://github.com/eehh-stanford/baydem}{github.com/eehh-stanford/baydem}\\
+      \bigskip
+      Analyses for in-review article that goes into much greater detail than I can go into today:\\
+      \href{https://github.com/MichaelHoltonPrice/price_et_al_tikal_rc}{github.com/MichaelHoltonPrice/price\_et\_al\_tikal\_rc}\\
+      \bigskip
+      The latex document and R code for reproducing this presentation (including most of the plots):\\
+      \href{https://github.com/MichaelHoltonPrice/saa_2021_constructing_chronologies}{github.com/MichaelHoltonPrice/saa\_2021\_constructing\_chronologies}\\
       
 \end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[c]
-    \frametitle{The Team}
-    \begin{itemize}
-      \item José M. Capriles
-      \item Julie A. Hoggarth
-      \item R. Kyle Bocinsky
-      \item Claire E. Ebert
-      \item James Holland Jones
+\begin{frame}[t]
+  \frametitle{Take-home messages}
+  \pause
+  \begin{itemize}
+    \item Dates-as-data: a plausible assumption
+    \pause
+    \item SPDs and methods based on them (SPD+) are fundamentally flawed and should never be used to summarize a set of radiocarbon dates
+    \pause
+    \item Use end-to-end (or aggregate) approaches instead
+    \pause
+    \item Using multiple types of data in a single inferential framework (e.g., radiocarbon dates + skeletal age-at-death) can alleviate bias problems
   \end{itemize}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
-  \frametitle{Summary}
+  \frametitle{Dates-as-Data}
+  The assumption that a set of radiocarbon dates can tell us something about past population size.
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{The Bias Problem [Bronk Ramsey]}
   \begin{itemize}
-    \item Two main challenges of dates-as-data: bias and summary problems
-    \pause
-    \item SPDs and methods based on them (SPD+) are fundamentally flawed and should never be used to solve the bias problem
-    \pause
-    \item Use end-to-end (or aggregate) approaches instead
-    \pause
-    \item Future progress in reconstructing past demography will require fursing multiple types of data (radiocarbon, skeletal age-at-death, etc.)
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item A set of such dates are published or otherwise available for analysis
   \end{itemize}
 \end{frame}
 
@@ -92,17 +107,19 @@
     \item The amount of material is proportional to population size.
     \pause
     \item The material gets deposited in recoverable contexts.
+    \pause
     \item Geological and taphonomic processes filter the material that persists to the present.
+    \pause
     \item Archaeological sites are identified via survey, construction, or other means.
     \item Archaeologists choose to excavate some of those sites.
     \item A subset of dateable material is in fact dated.
-    \item A subset of dates are published or otherwise available for meta-analysis.
+    \item A set of such dates are published or otherwise available for analysis
   \end{itemize}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
-  \frametitle{Dates-as-Data}
+  \frametitle{The Summary Problem}
 \begin{center}
 	\begin{tabular}{ r r }
 		Radiocarbon Year (BP) & Uncertainty (years)\\
@@ -129,7 +146,27 @@
 
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
+  \frametitle{Conceptually, what are we choosing among when we summarize the dates?}
+  \begin{itemize}
+    \item We want to know the distribution from which the dates were generated:
+    \pause
+    \item A population model
+    \pause
+    \item End-to-end/aggregate: the fundamental units of inference are "population" models
+    \pause
+    \item For SPDs, population models are not the fundamental units of inference
+  \end{itemize}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
   \frametitle{Fundamental flow of inference: SPDs}
+    \includegraphics[height=.85\textheight]{spd_flow.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{Fundamental flow of inference: SPDs [actual plot]}
     \includegraphics[height=.85\textheight]{spd_flow.pdf}
 \end{frame}
 
@@ -296,7 +333,7 @@
     \end{columns}
 \end{frame}
 
-%----------- slide --------------------------------------------------%
+
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
   \frametitle{A simulation}
@@ -304,43 +341,26 @@
 \end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}
-  \frametitle{Problem Statement}
-    \begin{center}
-      \includegraphics[height=.85\textheight]{lifeline_plot_no_horiz_line.pdf}
-    \end{center}
+\begin{frame}[c]
+  \frametitle{Recent work outside the SPD+ realm}
+    \begin{itemize}
+      \item Price et al. (2020; biorxiv) -- End-to-end Bayesian analysis of 14C dates reveals new insights into lowland Maya demography
+      \item Carleton 2020 -- Evaluating Bayesian Radiocarbon-dated Event Count (REC) models for the study of long-term human and environmental processes
+      \item Carleton and Groucutt 2020 -- Sum things are not what they seem
+      \item Timpson et al. 2020 -- Directly modelling population dynamics in the South American Arid Diagonal using 14C dates
+  \end{itemize}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}
-  \frametitle{Problem Statement}
-    \begin{center}
-      \includegraphics[height=.85\textheight]{lifeline_plot.pdf}
-    \end{center}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}
-  \frametitle{Geographic Scale}
-  \begin{columns}[c]
-   \column{.5\textwidth}
-     \begin{block}{Site Demography}
-      \begin{center}
-        \includegraphics[width=1\textwidth]{maya_site.jpg}\
-      \end{center}
-    \end{block}
-    \pause
-
-   \column{.5\textwidth}
-     \begin{block}{Regional Demography}
-      \begin{center}
-        \includegraphics[width=1\textwidth]{belize_region.jpg}\
-      \end{center}
-    \end{block}
-  \end{columns}
-
-  \btVFill
-  \small Images courtesy Julie Hoggarth \normalsize
+\begin{frame}[c]
+    \frametitle{The Team}
+    \begin{itemize}
+      \item José M. Capriles
+      \item Julie A. Hoggarth
+      \item R. Kyle Bocinsky
+      \item Claire E. Ebert
+      \item James Holland Jones
+  \end{itemize}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
