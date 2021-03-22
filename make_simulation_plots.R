@@ -128,14 +128,14 @@ max_lik_fit100_K2 <- temper_trunc_gauss_mix(2,
                                             rc_meas$sig_m[1:100],
                                             hp$taumin,
                                             hp$taumax, hp$dtau,
-                                            calibDf,num_restart=10,
+                                            calibDf,num_restart=40,
                                             num_cores=cores_to_use)
 max_lik_fit100_K3 <- temper_trunc_gauss_mix(3,
                                             rc_meas$phi_m[1:100],
                                             rc_meas$sig_m[1:100],
                                             hp$taumin,
                                             hp$taumax, hp$dtau,
-                                            calibDf,num_restart=10,
+                                            calibDf,num_restart=40,
                                             num_cores=cores_to_use)
 if(max_lik_fit100_K2$bic < max_lik_fit100_K3$bic) {
   print("For N=100, K=2 is preferred")
@@ -147,14 +147,14 @@ max_lik_fit1000_K2 <- temper_trunc_gauss_mix(2,
                                              rc_meas$sig_m[1:1000],
                                              hp$taumin,
                                              hp$taumax, hp$dtau,
-                                             calibDf,num_restart=10,
+                                             calibDf,num_restart=40,
                                              num_cores=cores_to_use)
 max_lik_fit1000_K3 <- temper_trunc_gauss_mix(3,
                                              rc_meas$phi_m[1:1000],
                                              rc_meas$sig_m[1:1000],
                                              hp$taumin,
                                              hp$taumax, hp$dtau,
-                                             calibDf,num_restart=10,
+                                             calibDf,num_restart=40,
                                              num_cores=cores_to_use)
 if(max_lik_fit1000_K2$bic < max_lik_fit1000_K3$bic) {
   print("For N=1000, K=2 is preferred")
@@ -166,15 +166,16 @@ max_lik_fit10000_K2 <- temper_trunc_gauss_mix(2,
                                               rc_meas$sig_m[1:10000],
                                               hp$taumin,
                                               hp$taumax, hp$dtau,
-                                              calibDf,num_restart=10,
+                                              calibDf,num_restart=40,
                                               num_cores=cores_to_use)
 max_lik_fit10000_K3 <- temper_trunc_gauss_mix(3,
                                               rc_meas$phi_m[1:10000],
                                               rc_meas$sig_m[1:10000],
                                               hp$taumin,
                                               hp$taumax, hp$dtau,
-                                              calibDf,num_restart=10,
+                                              calibDf,num_restart=40,
                                               num_cores=cores_to_use)
+
 if(max_lik_fit10000_K2$bic < max_lik_fit10000_K3$bic) {
   print("For N=10000, K=2 is preferred")
 } else {
@@ -224,6 +225,7 @@ fmax <- max(fsim,hist_data$density,fspd100,fspd1000,fspd10000,
             bchron_fit100_K2$f,bchron_fit1000_K2$f,bchron_fit10000_K2$f,
             kde_fit100$kde,kde_fit1000$kde)
 
+fmax_initial <- max(fsim,fspd100,fspd1000,fspd10000)
 # Show just the target curve
 pdf('sim_target.pdf',width=8,height=6)
   plot(tau,fsim,
@@ -247,22 +249,46 @@ pdf('sim_target_with_hist.pdf',width=8,height=6)
 dev.off()
 
 # Show the SPD for N=10000
-pdf('sim_spd_10000.pdf',width=8,height=6)
+pdf('sim_spd_100.pdf',width=8,height=6)
   plot(tau,fspd10000,
        xlab='Calendar Year [AD]',ylab='Density',
-       ylim=c(0,fmax),type="l",lwd=3,col="black")
+       ylim=c(0,fmax_initial),type="l",lwd=3,col="black")
   legend("topright",
        legend="SPD",
        col="black",
        lty=1)
 dev.off()
 
+# Show the target curve and the SPD for N=100
+pdf('sim_target_spd_100.pdf',width=8,height=6)
+  plot(tau,fspd100,
+       xlab='Calendar Year [AD]',ylab='Density',
+       ylim=c(0,fmax_initial),type="l",lwd=3,col="black")
+  lines(tau,fsim,lwd=3,col="blue")
+  legend("topright",
+       legend=c("Target","SPD"),
+       col=c("blue","black"),
+       lty=c(1,1))
+dev.off()
+
+# Show the target curve and the SPD for N=1000
+pdf('sim_target_spd_1000.pdf',width=8,height=6)
+  plot(tau,fspd1000,
+       xlab='Calendar Year [AD]',ylab='Density',
+       ylim=c(0,fmax_initial),type="l",lwd=3,col="black")
+  lines(tau,fsim,lwd=3,col="blue")
+  legend("topright",
+       legend=c("Target","SPD"),
+       col=c("blue","black"),
+       lty=c(1,1))
+dev.off()
+
 # Show the target curve and the SPD for N=10000
 pdf('sim_target_spd_10000.pdf',width=8,height=6)
   plot(tau,fspd10000,
        xlab='Calendar Year [AD]',ylab='Density',
-       ylim=c(0,fmax),type="l",lwd=3,col="black")
-  lines(tau,fsim,,lwd=3,col="blue")
+       ylim=c(0,fmax_initial),type="l",lwd=3,col="black")
+  lines(tau,fsim,lwd=3,col="blue")
   legend("topright",
        legend=c("Target","SPD"),
        col=c("blue","black"),
@@ -274,7 +300,7 @@ pdf('sim_target_spd_max-lik_bchron_100.pdf',width=8,height=6)
   plot(tau,fspd100,
        xlab='Calendar Year [AD]',ylab='Density',
        ylim=c(0,fmax),type="l",lwd=3,col="black")
-  lines(tau,fsim,,lwd=3,col="blue")
+  lines(tau,fsim,lwd=3,col="blue")
   lines(max_lik_fit100_K2$tau,max_lik_fit100_K2$f,lwd=3,col="red")
   lines(bchron_fit100_K2$tau,bchron_fit100_K2$f,lwd=3,col="black",lty=3)
   legend("topright",
@@ -301,7 +327,7 @@ pdf('sim_target_spd_max-lik_bchron_1000.pdf',width=8,height=6)
   plot(tau,fspd1000,
        xlab='Calendar Year [AD]',ylab='Density',
        ylim=c(0,fmax),type="l",lwd=3,col="black")
-  lines(tau,fsim,,lwd=3,col="blue")
+  lines(tau,fsim,lwd=3,col="blue")
   lines(max_lik_fit1000_K2$tau,max_lik_fit1000_K2$f,lwd=3,col="red")
   lines(bchron_fit1000_K2$tau,bchron_fit1000_K2$f,lwd=3,col="black",lty=3)
   legend("topright",
@@ -328,7 +354,7 @@ pdf('sim_target_spd_max-lik_bchron_10000.pdf',width=8,height=6)
   plot(tau,fspd10000,
        xlab='Calendar Year [AD]',ylab='Density',
        ylim=c(0,fmax),type="l",lwd=3,col="black")
-  lines(tau,fsim,,lwd=3,col="blue")
+  lines(tau,fsim,lwd=3,col="blue")
   lines(max_lik_fit10000_K2$tau,max_lik_fit10000_K2$f,lwd=3,col="red")
   lines(bchron_fit10000_K2$tau,bchron_fit10000_K2$f,lwd=3,col="black",lty=3)
   legend("topright",
