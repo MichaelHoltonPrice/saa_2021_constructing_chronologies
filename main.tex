@@ -40,28 +40,6 @@
 \end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}
-  \frametitle{Because we've gone digital, I've made the presentation easily accessible}
-  \centering
-  \href{https://www.overleaf.com/read/cwhmdrdfxncm}{https://www.overleaf.com/read/cwhmdrdfxncm}
-  \includegraphics[height=.85\textheight]{QR_Code_1616345765.png}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[c]
-    \frametitle{Accessing the code}
-      R package that implements the end-to-end approach I describe today:\\
-      \href{https://github.com/eehh-stanford/baydem}{github.com/eehh-stanford/baydem}\\
-      \bigskip
-      Analyses for in-review article that goes into much greater detail than I can go into today:\\
-      \href{https://github.com/MichaelHoltonPrice/price_et_al_tikal_rc}{github.com/MichaelHoltonPrice/price\_et\_al\_tikal\_rc}\\
-      \bigskip
-      The latex document and R code for reproducing this presentation (including code for many of the plots):\\
-      \href{https://github.com/MichaelHoltonPrice/saa_2021_constructing_chronologies}{github.com/MichaelHoltonPrice/saa\_2021\_constructing\_chronologies}\\
-      
-\end{frame}
-
-%----------- slide --------------------------------------------------%
 \begin{frame}[t]
   \frametitle{Take-home messages}
   \pause
@@ -79,7 +57,19 @@
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
   \frametitle{Dates-as-Data}
-  The assumption that a set of radiocarbon dates can tell us something about past population size.
+  The assumption that a set of radiocarbon dates can tell us something useful about past population size.
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{The Bias and Summary problems (Bronk Ramsey 2017)}
+  Bias problem: The dates that made it into our sample are too biased to be informative of past population size\\
+  \bigskip
+  \pause
+  Summary problem: Even if there is no bias problem, radiocarbon measurements do not directly capture past population size (measurement uncertainty, ambiguity in the radiocarbon calibration curve, etc.).\\
+  \bigskip
+  \pause
+  My focus today is an improved approach for solving the summary problem, but I will close with some remarks about how the bias problem can be addressed by using multiple types of data.\\
 \end{frame}
 
 %----------- slide --------------------------------------------------%
@@ -153,8 +143,22 @@
     \item A population model
     \pause
     \item End-to-end/aggregate: the fundamental units of inference are "population" models
-    \pause
+  \end{itemize}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{Fundamental flow of inference: End-to-End}
+    \includegraphics[height=.85\textheight]{e2e_flow.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{Why are SPDs flawed?}
+  \begin{itemize}
     \item For SPDs, population models are not the fundamental units of inference
+    \pause
+    \item Because SPDs involve separate calibrations of each observation, ambiguity from the radiocarbon calibration curve is not dealt with at the aggregate level.
   \end{itemize}
 \end{frame}
 
@@ -168,12 +172,6 @@
 \begin{frame}[t]
   \frametitle{Fundamental flow of inference: SPDs}
     \includegraphics[height=.85\textheight]{sim_spd_10000.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Fundamental flow of inference: End-to-End}
-    \includegraphics[height=.85\textheight]{e2e_flow.pdf}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
@@ -442,6 +440,28 @@
       \item Claire E. Ebert
       \item James Holland Jones
   \end{itemize}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Because we've gone digital, I've made the presentation easily accessible}
+  \centering
+  \href{https://www.overleaf.com/read/cwhmdrdfxncm}{https://www.overleaf.com/read/cwhmdrdfxncm}
+  \includegraphics[height=.85\textheight]{QR_Code_1616345765.png}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[c]
+    \frametitle{Accessing the code}
+      R package that implements the end-to-end approach I describe today:\\
+      \href{https://github.com/eehh-stanford/baydem}{github.com/eehh-stanford/baydem}\\
+      \bigskip
+      Analyses for in-review article that goes into much greater detail than I can go into today:\\
+      \href{https://github.com/MichaelHoltonPrice/price_et_al_tikal_rc}{github.com/MichaelHoltonPrice/price\_et\_al\_tikal\_rc}\\
+      \bigskip
+      The latex document and R code for reproducing this presentation (including code for many of the plots):\\
+      \href{https://github.com/MichaelHoltonPrice/saa_2021_constructing_chronologies}{github.com/MichaelHoltonPrice/saa\_2021\_constructing\_chronologies}\\
+      
 \end{frame}
 
 %----------- slide --------------------------------------------------%
