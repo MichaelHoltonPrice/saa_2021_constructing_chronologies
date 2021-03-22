@@ -199,18 +199,18 @@ bchron_fit10000_K2 <- do_BchronDensityFast_modified_fit(rc_meas$phi_m[1:10000],
                                                         2)
 
 # Do KDE fits
-kde_fit100 <- fit_kde(rc_meas$phi_m[1:100],
-                      rc_meas$sig_m[1:100],
-                      tau,
-                      num_samp_g=10,
-                      num_samp_t=100)
-
-kde_fit1000 <- fit_kde(rc_meas$phi_m[1:1000],
-                       rc_meas$sig_m[1:1000],
-                       tau,
-                       num_samp_g=10,
-                       num_samp_t=100)
-
+#kde_fit100 <- fit_kde(rc_meas$phi_m[1:100],
+#                      rc_meas$sig_m[1:100],
+#                      tau,
+#                      num_samp_g=10,
+#                      num_samp_t=100)
+#
+#kde_fit1000 <- fit_kde(rc_meas$phi_m[1:1000],
+#                       rc_meas$sig_m[1:1000],
+#                       tau,
+#                       num_samp_g=10,
+#                       num_samp_t=100)
+#
 #kde_fit10000 <- fit_kde(rc_meas$phi_m[1:10000],
 #                        rc_meas$sig_m[1:10000],
 #                        tau,
@@ -283,18 +283,18 @@ pdf('sim_target_spd_max-lik_bchron_100.pdf',width=8,height=6)
        lty=c(1,1,1,3))
 dev.off()
 
-pdf('sim_target_spd_max-lik_kde_100.pdf',width=8,height=6)
-  plot(tau,fspd100,
-       xlab='Calendar Year [AD]',ylab='Density',
-       ylim=c(0,fmax),type="l",lwd=3,col="black")
-  lines(tau,fsim,,lwd=3,col="blue")
-  lines(max_lik_fit100_K2$tau,max_lik_fit100_K2$f,lwd=3,col="red")
-  lines(kde_fit100$tau,kde_fit100$f,lwd=3,col="black",lty=3)
-  legend("topright",
-         legend=c("Target","SPD","Max-Lik","KDE"),
-         col=c("blue","black","red","black"),
-         lty=c(1,1,1,3))
-dev.off()
+#pdf('sim_target_spd_max-lik_kde_100.pdf',width=8,height=6)
+#  plot(tau,fspd100,
+#       xlab='Calendar Year [AD]',ylab='Density',
+#       ylim=c(0,fmax),type="l",lwd=3,col="black")
+#  lines(tau,fsim,,lwd=3,col="blue")
+#  lines(max_lik_fit100_K2$tau,max_lik_fit100_K2$f,lwd=3,col="red")
+#  lines(kde_fit100$tau,kde_fit100$f,lwd=3,col="black",lty=3)
+#  legend("topright",
+#         legend=c("Target","SPD","Max-Lik","KDE"),
+#         col=c("blue","black","red","black"),
+#         lty=c(1,1,1,3))
+#dev.off()
 
 # Compares fits for N=1000
 pdf('sim_target_spd_max-lik_bchron_1000.pdf',width=8,height=6)
@@ -310,18 +310,18 @@ pdf('sim_target_spd_max-lik_bchron_1000.pdf',width=8,height=6)
        lty=c(1,1,1,3))
 dev.off()
 
-pdf('sim_target_spd_max-lik_kde_1000.pdf',width=8,height=6)
-  plot(tau,fspd1000,
-       xlab='Calendar Year [AD]',ylab='Density',
-       ylim=c(0,fmax),type="l",lwd=3,col="black")
-  lines(tau,fsim,,lwd=3,col="blue")
-  lines(max_lik_fit1000_K2$tau,max_lik_fit1000_K2$f,lwd=3,col="red")
-  lines(kde_fit1000$tau,kde_fit1000$f,lwd=3,col="black",lty=3)
-  legend("topright",
-         legend=c("Target","SPD","Max-Lik","KDE"),
-         col=c("blue","black","red","black"),
-         lty=c(1,1,1,3))
-dev.off()
+#pdf('sim_target_spd_max-lik_kde_1000.pdf',width=8,height=6)
+#  plot(tau,fspd1000,
+#       xlab='Calendar Year [AD]',ylab='Density',
+#       ylim=c(0,fmax),type="l",lwd=3,col="black")
+#  lines(tau,fsim,,lwd=3,col="blue")
+#  lines(max_lik_fit1000_K2$tau,max_lik_fit1000_K2$f,lwd=3,col="red")
+#  lines(kde_fit1000$tau,kde_fit1000$f,lwd=3,col="black",lty=3)
+#  legend("topright",
+#         legend=c("Target","SPD","Max-Lik","KDE"),
+#         col=c("blue","black","red","black"),
+#         lty=c(1,1,1,3))
+#dev.off()
 
 # Compares fits for N=10000
 pdf('sim_target_spd_max-lik_bchron_10000.pdf',width=8,height=6)

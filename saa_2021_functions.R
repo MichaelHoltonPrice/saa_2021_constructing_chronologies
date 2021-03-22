@@ -266,7 +266,8 @@ do_BchronDensityFast_modified_fit <- function(phi_m,sig_m,tau,K) {
 # Bronk Ramsey 2009 -- Methods for summarizing 14C dates
 # Carleton and Groucutt 2020 -- Sum things are not what they seem
 #
-# The algorithm involves doing the following multiple times:
+# The algorithm involves doing the following multiple times inside a double for
+# loop of samples of the date vector and samples of the bandwidth, g:
 #
 # (1) Take a sample of potential dates (in Oxcal, stratigraphic information can
 #     can be used at this step, but for my implementation I simply use
