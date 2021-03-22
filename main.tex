@@ -56,7 +56,7 @@
       Analyses for in-review article that goes into much greater detail than I can go into today:\\
       \href{https://github.com/MichaelHoltonPrice/price_et_al_tikal_rc}{github.com/MichaelHoltonPrice/price\_et\_al\_tikal\_rc}\\
       \bigskip
-      The latex document and R code for reproducing this presentation (including most of the plots):\\
+      The latex document and R code for reproducing this presentation (including code for many of the plots):\\
       \href{https://github.com/MichaelHoltonPrice/saa_2021_constructing_chronologies}{github.com/MichaelHoltonPrice/saa\_2021\_constructing\_chronologies}\\
       
 \end{frame}
@@ -146,7 +146,7 @@
 
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
-  \frametitle{Conceptually, what are we choosing among when we summarize the dates?}
+  \frametitle{Conceptually, what does solving the summary problem involve?}
   \begin{itemize}
     \item We want to know the distribution from which the dates were generated:
     \pause
@@ -166,8 +166,8 @@
 
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
-  \frametitle{Fundamental flow of inference: SPDs [actual plot]}
-    \includegraphics[height=.85\textheight]{spd_flow.pdf}
+  \frametitle{Fundamental flow of inference: SPDs}
+    \includegraphics[height=.85\textheight]{sim_spd_10000.pdf}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
@@ -177,167 +177,213 @@
 \end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-    \frametitle{Bayesian Inference}
-   
-    \begin{columns}[c]
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}
-            \end{flushright}
-    \end{columns}
-\end{frame}
+%\begin{frame}[t]
+%    \frametitle{Bayesian Inference}
+%    \begin{columns}[c]
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}
+%            \end{flushright}
+%    \end{columns}
+%\end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-    \frametitle{Bayesian Inference}
-    \begin{columns}[c]
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
-                \vspace{10pt}
-                \Large Prior \hfill $0.40$\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
-                \vspace{10pt}
-                \Large $0.20$\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
-                \vspace{10pt}
-                \Large $0.4$\\
-            \end{flushright}
-    \end{columns}
-\end{frame}
+%\begin{frame}[t]
+%    \frametitle{Bayesian Inference}
+%    \begin{columns}[c]
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
+%                \vspace{10pt}
+%                \Large Prior \hfill $0.40$\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
+%                \vspace{10pt}
+%                \Large $0.20$\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
+%                \vspace{10pt}
+%                \Large $0.4$\\
+%            \end{flushright}
+%    \end{columns}
+%\end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-    \frametitle{Bayesian Inference}
-    \begin{columns}[c]
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
-                \vspace{10pt}
-                \Large Prior \hfill $0.40$\\
-                \vspace{20pt}
-                \Large Likelihood \hfill $0.02$\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
-                \vspace{10pt}
-                \Large $0.20$\\
-                \vspace{20pt}
-                \Large $1.00$\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
-                \vspace{10pt}
-                \Large $0.4$\\
-                \vspace{20pt}
-                \Large $0.04$\\
-            \end{flushright}
-    \end{columns}
-\end{frame}
+%\begin{frame}[t]
+%    \frametitle{Bayesian Inference}
+%    \begin{columns}[c]
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
+%                \vspace{10pt}
+%                \Large Prior \hfill $0.40$\\
+%                \vspace{20pt}
+%                \Large Likelihood \hfill $0.02$\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
+%                \vspace{10pt}
+%                \Large $0.20$\\
+%                \vspace{20pt}
+%                \Large $1.00$\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
+%                \vspace{10pt}
+%                \Large $0.4$\\
+%                \vspace{20pt}
+%                \Large $0.04$\\
+%            \end{flushright}
+%    \end{columns}
+%\end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-    \frametitle{Bayesian Inference}
-    \begin{columns}[c]
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
-                \vspace{10pt}
-                \Large Prior \hfill $0.40$\\
-                \vspace{20pt}
-                \Large Likelihood \hfill $0.02$\\
-                \vspace{20pt}
-                \Large Posterior \hfill $0.02$
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
-                \vspace{10pt}
-                \Large $0.20$\\
-                \vspace{20pt}
-                \Large $1.00$\\
-                \vspace{20pt}
-                \Large $0.94$
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
-                \vspace{10pt}
-                \Large $0.4$\\
-                \vspace{20pt}
-                \Large $0.04$\\
-                \vspace{20pt}
-                \Large $0.04$
-            \end{flushright}
-    \end{columns}
-\end{frame}
+%\begin{frame}[t]
+%    \frametitle{Bayesian Inference}
+%    \begin{columns}[c]
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
+%                \vspace{10pt}
+%                \Large Prior \hfill $0.40$\\
+%                \vspace{20pt}
+%                \Large Likelihood \hfill $0.02$\\
+%                \vspace{20pt}
+%                \Large Posterior \hfill $0.02$
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
+%                \vspace{10pt}
+%                \Large $0.20$\\
+%                \vspace{20pt}
+%                \Large $1.00$\\
+%                \vspace{20pt}
+%                \Large $0.94$
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
+%                \vspace{10pt}
+%                \Large $0.4$\\
+%                \vspace{20pt}
+%                \Large $0.04$\\
+%                \vspace{20pt}
+%                \Large $0.04$
+%            \end{flushright}
+%    \end{columns}
+%\end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-    \frametitle{Bayesian Inference}
-    \begin{columns}[c]
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_prior.pdf}\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_blank.pdf}\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_blank.pdf}\\
-            \end{flushright}
-    \end{columns}
-\end{frame}
+%\begin{frame}[t]
+%    \frametitle{Bayesian Inference}
+%    \begin{columns}[c]
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_prior.pdf}\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_blank.pdf}\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_blank.pdf}\\
+%            \end{flushright}
+%    \end{columns}
+%\end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-    \frametitle{Bayesian Inference}
-    \begin{columns}[c]
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_prior.pdf}\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_blank.pdf}\\
-            \end{flushright}
-        \column{.333\textwidth}
-            \begin{flushright}
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
-                \includegraphics[width=1\textwidth]{bayesian_update_illustration_posterior.pdf}\\
-            \end{flushright}
-    \end{columns}
-\end{frame}
-
+%\begin{frame}[t]
+%    \frametitle{Bayesian Inference}
+%    \begin{columns}[c]
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th1.pdf}\\
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_prior.pdf}\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th2.pdf}\\
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_blank.pdf}\\
+%            \end{flushright}
+%        \column{.333\textwidth}
+%            \begin{flushright}
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_th3.pdf}\\
+%                \includegraphics[width=1\textwidth]{bayesian_update_illustration_posterior.pdf}\\
+%            \end{flushright}
+%    \end{columns}
+%\end{frame}
 
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
   \frametitle{A simulation}
-    \includegraphics[height=.85\textheight]{spdall_sim.pdf}
+    \includegraphics[height=.85\textheight]{sim_target.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{A simulation [N=10000]}
+    \includegraphics[height=.85\textheight]{sim_target_with_hist.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{A simulation [N=10000]}
+    \includegraphics[height=.85\textheight]{sim_target_spd_10000.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{A simulation [N=10000]}
+    \includegraphics[height=.85\textheight]{sim_target_spd_max-lik_bchron_10000.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{A simulation [N=100]}
+    \includegraphics[height=.85\textheight]{sim_target_spd_max-lik_bchron_100.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{A simulation [N=100]}
+    \includegraphics[height=.85\textheight]{sim_target_spd_max-lik_kde_100.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{A simulation [N=1000]}
+    \includegraphics[height=.85\textheight]{sim_target_spd_max-lik_bchron_1000.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{A simulation [N=1000]}
+    \includegraphics[height=.85\textheight]{sim_target_spd_max-lik_kde_1000.pdf}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{Simulation with Bayesian Inference}
+    \includegraphics[height=.85\textheight]{Fig1_sim_inference.pdf}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
@@ -348,18 +394,6 @@
       \item Carleton 2020 -- Evaluating Bayesian Radiocarbon-dated Event Count (REC) models for the study of long-term human and environmental processes
       \item Carleton and Groucutt 2020 -- Sum things are not what they seem
       \item Timpson et al. 2020 -- Directly modelling population dynamics in the South American Arid Diagonal using 14C dates
-  \end{itemize}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[c]
-    \frametitle{The Team}
-    \begin{itemize}
-      \item José M. Capriles
-      \item Julie A. Hoggarth
-      \item R. Kyle Bocinsky
-      \item Claire E. Ebert
-      \item James Holland Jones
   \end{itemize}
 \end{frame}
 
@@ -398,181 +432,21 @@
   \end{columns}
 \end{frame}
 
-
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{A Tale of Two Problems: The Summary Problem}
-  \pause
-  \begin{itemize}
-    \item Summed probability densities (SPDs) are the dominant, current method of summarizing sets of radiocarbon dates
-    \pause
-    \item SPDs are fundamentally flawed
-    \pause
-    \item A principled solution of the summary problem must be end-to-end
+\begin{frame}[c]
+    \frametitle{The Team}
+    \begin{itemize}
+      \item José M. Capriles
+      \item Julie A. Hoggarth
+      \item R. Kyle Bocinsky
+      \item Claire E. Ebert
+      \item James Holland Jones
   \end{itemize}
-\end{frame}
-
-
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Back to simulation}
-    \includegraphics[height=.85\textheight]{Fig1_sim_inference.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Statistical Identifiability}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Maya Reconstructions}
-    \includegraphics[height=.85\textheight]{Fig2_maya_inference_K10.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Maya Reconstructions}
-    \includegraphics[height=.85\textheight]{Fig3_tikal_prev_expert_comparison.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Maya Reconstructions}
-    \includegraphics[height=.85\textheight]{Fig4_maya_inference_rate_K10.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Maya Reconstructions}
-    \includegraphics[height=.85\textheight]{Fig5_maya_histograms.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{What about the bias problem?}
-  Different types of data often have different bias problems
-  \bigskip
-  State-of-the-art improvements in reconstructing past demography demand effective fusion of different types of data
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}
-  \frametitle{Leslie Matrices}
-    %\begin{block}{}
-	  \begin{center}
-          \includegraphics[width=.8\textwidth]{life-cycle.pdf}\
-	  \end{center}
-    %\end{block}
-    \pause
-
-    %\begin{block}{}
-	  \begin{center}
-	  \small
-          \begin{equation*}
-            \label{eq:A}
-            \mathbf{A} = 
-            \left( \begin{array}{cccccc}
-                    F_1 & F_2 & F_3 & F_4    & \cdots  & F_{M}   \\
-                    P_1 & 0   & 0   & 0      & \cdots  & 0       \\
-                    0   & P_2 & 0   & 0      & \cdots  & 0       \\
-                    0   & 0   & P_3 & 0      & \cdots  & 0       \\
-                    0   & 0   & 0   & \ddots & \cdots  & 0       \\
-                    0   & 0   & 0   & \ddots & P_{M-1} & 0
-                   \end{array} \right)
-          \end{equation*}
-	  \end{center}
-    %\end{block}
-
- %     $\mathbf{z}_{t+1} = \mathbf{A} \, \mathbf{z}_{t}$\\
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Leslie Matrices}
-\begin{minipage}{0\linewidth}
-\begin{flushleft}                           
-\begin{equation*}
-      \mathbf{z}_{n+1} = \mathbf{A} \, \mathbf{z}_{n}
-\end{equation*}
-\pause
-\begin{equation*}
-	\mathbf{z}_{n} = \mathbf{A} \cdots \mathbf{A} \, \mathbf{A} \, \mathbf{z}_{0} = \mathbf{A}^t \, \mathbf{z}_{0}
-\end{equation*}
-\pause
-\begin{equation*}
-	\mathbf{z}_{n} = \mathbf{A}_n \cdots \mathbf{A}_2 \, \mathbf{A}_1 \, \mathbf{z}_{0} = {}^n_1\mathbf{Y} \, \mathbf{z}_{0}
-\end{equation*}
-\pause
-\\
-\begin{equation*}
-	{}^n_1\mathbf{Y}(\greekbf{\theta}) \longrightarrow p(y,a|\greekbf{\theta})
-\end{equation*}
-\end{flushleft} 
-\end{minipage}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Future Work: Radiocarbon + Age-at-Death}
-    \large High growth rate implies many young people \normalsize\\
-    \pause
-    \bigskip
-    \large Lack suitable datasets [to my knowledge]\\
-    \pause
-    \bigskip
-    \large Need better statistical methodologies for inferring age-at-death from skeletons\\
-    \pause
-    \bigskip
-    \large A promising PhD project, perhaps!\\
 \end{frame}
 
 %----------- slide --------------------------------------------------%
 \begin{frame}[t]
   \frametitle{Additional Slides}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Bayesian Inference on a Single Sample}
-    \begin{center}
-      \includegraphics[height=.8\textheight]{calibration.png}
-	\begin{textblock*}{100pt}(0pt,240pt)
-      		\small OxCal Website \normalsize
-	\end{textblock*}
-    \end{center}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Bayesian Inference on a Single Sample: Uniform Prior}
-    \begin{center}
-      \includegraphics[height=.8\textheight]{single_obs_inf_plot1.pdf}
-    \end{center}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Bayesian Inference on a Single Sample: Uniform Prior}
-    \begin{center}
-      \includegraphics[height=.8\textheight]{single_obs_inf_plot1.pdf}
-    \end{center}
-    \begin{textblock*}{100pt}(175pt,140pt)
-      \Large $p(t)$ \normalsize
-	\end{textblock*}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Bayesian Inference on a Single Sample: Update}
-    \begin{itemize}
-    \item Radiocarbon determination
-    \pause
-    \item Calibration curve
-    \pause
-    \item Other constraints (for multiple samples, stratigraphy)
-    \end{itemize}
 \end{frame}
 
 %----------- slide --------------------------------------------------%
@@ -654,57 +528,6 @@
 \end{frame}
 
 %----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Update (single observation, given $t$)}
-    \includegraphics[height=.85\textheight]{single_obs_inf_plot3.pdf}
-    \begin{textblock*}{100pt}(175pt,140pt)
-      \Large $p(t)$ \normalsize
-	\end{textblock*}
-    \begin{textblock*}{100pt}(220pt,80pt)
-      \Large $p(t|\phi_m)$ \normalsize
-	\end{textblock*}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Summed probability densities (SPDs)}
-    \includegraphics[height=.85\textheight]{spd1.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Summed probability densities (SPDs)}
-    \includegraphics[height=.85\textheight]{spd2.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Summed probability densities (SPDs)}
-    \includegraphics[height=.85\textheight]{spd3.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Summed probability densities (SPDs)}
-    \includegraphics[height=.85\textheight]{spdall.pdf}
-\end{frame}
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{Summed probability densities (SPDs)}
-    \includegraphics[height=.85\textheight]{spdall_sim.pdf}
-\end{frame}
-
-
-
-%----------- slide --------------------------------------------------%
-\begin{frame}[t]
-  \frametitle{A simulation demonstrating failure of SPDs}
-    \includegraphics[height=.85\textheight]{Fig1_sim_inference.pdf}
-\end{frame}
-
-
-%----------- slide --------------------------------------------------%
 \begin{frame}
   \frametitle{Bayesian Inference}
   \begin{center}
@@ -743,3 +566,74 @@
 \end{frame}
 
 \end{document}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Leslie Matrices}
+    %\begin{block}{}
+	  \begin{center}
+          \includegraphics[width=.8\textwidth]{life-cycle.pdf}\
+	  \end{center}
+    %\end{block}
+    \pause
+
+    %\begin{block}{}
+	  \begin{center}
+	  \small
+          \begin{equation*}
+            \label{eq:A}
+            \mathbf{A} = 
+            \left( \begin{array}{cccccc}
+                    F_1 & F_2 & F_3 & F_4    & \cdots  & F_{M}   \\
+                    P_1 & 0   & 0   & 0      & \cdots  & 0       \\
+                    0   & P_2 & 0   & 0      & \cdots  & 0       \\
+                    0   & 0   & P_3 & 0      & \cdots  & 0       \\
+                    0   & 0   & 0   & \ddots & \cdots  & 0       \\
+                    0   & 0   & 0   & \ddots & P_{M-1} & 0
+                   \end{array} \right)
+          \end{equation*}
+	  \end{center}
+    %\end{block}
+
+ %     $\mathbf{z}_{t+1} = \mathbf{A} \, \mathbf{z}_{t}$\\
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{Leslie Matrices}
+\begin{minipage}{0\linewidth}
+\begin{flushleft}                           
+\begin{equation*}
+      \mathbf{z}_{n+1} = \mathbf{A} \, \mathbf{z}_{n}
+\end{equation*}
+\pause
+\begin{equation*}
+	\mathbf{z}_{n} = \mathbf{A} \cdots \mathbf{A} \, \mathbf{A} \, \mathbf{z}_{0} = \mathbf{A}^t \, \mathbf{z}_{0}
+\end{equation*}
+\pause
+\begin{equation*}
+	\mathbf{z}_{n} = \mathbf{A}_n \cdots \mathbf{A}_2 \, \mathbf{A}_1 \, \mathbf{z}_{0} = {}^n_1\mathbf{Y} \, \mathbf{z}_{0}
+\end{equation*}
+\pause
+\\
+\begin{equation*}
+	{}^n_1\mathbf{Y}(\greekbf{\theta}) \longrightarrow p(y,a|\greekbf{\theta})
+\end{equation*}
+\end{flushleft} 
+\end{minipage}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}[t]
+  \frametitle{Future Work: Radiocarbon + Age-at-Death}
+    \large High growth rate implies many young people \normalsize\\
+    \pause
+    \bigskip
+    \large Lack suitable datasets [to my knowledge]\\
+    \pause
+    \bigskip
+    \large Need better statistical methodologies for inferring age-at-death from skeletons\\
+    \pause
+    \bigskip
+    \large A promising PhD project, perhaps!\\
+\end{frame}
